@@ -35,7 +35,7 @@ The scaffolding of each challenges / app is done for you and each challenge has 
 
 &nbsp;
 ## Have you got the solutions?
-Hacer un git push inicial cuando vas a comenzar el reto y uno al finalizarlo, incluir en el proyecto a [orazo@vozy.co](orazo@vozy.co).
+Generar un repositorio local, hacer un `git push` inicial cuando vas a comenzar el reto y uno al finalizarlo, incluir en el proyecto a [orazo@vozy.co](orazo@vozy.co).
 
 
 ### What Makes A Good Challenge?
