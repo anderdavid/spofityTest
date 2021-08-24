@@ -1,5 +1,6 @@
+# You have 60 minutes to solve it / Tienes 60 minutos para resolverlo
 
-### Hard 😬
+### Select a challenge 😬
 ##### 🎧 [Spootify](https://github.com/alexgurr/react-coding-challenges/tree/master/spootify)
 Loading state, API usage.
 
