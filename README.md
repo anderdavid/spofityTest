@@ -1,19 +1,11 @@
 # You have 60 minutes to solve it / Tienes 60 minutos para resolverlo
 
 ### Select a challenge 😬
-##### 🎧 [Spootify](https://github.com/alexgurr/react-coding-challenges/tree/master/spootify)
+##### 🎧 [Spootify](https://gitlab.com/orazo/react_code_challenges/-/tree/main/spootify)
 Loading state, API usage.
 
-##### 🤖 [Chatter](https://github.com/alexgurr/react-coding-challenges/tree/master/chatter)
+##### 🤖 [Chatter](https://gitlab.com/orazo/react_code_challenges/-/tree/main/rocket-ship)
 Web sockets, events, callbacks & React hooks. Talks to [Botty](https://github.com/alexgurr/botty).
-
-&nbsp;
-## Future Challenges ![later](https://badgen.net/badge/status/coming%20later/yellow?icon=)
-##### 🛒 shopit
-A product page with a shopping cart/checkout experience.
-
-##### 🪐 gogalaxy
-An interactive planetarium.
 
 &nbsp;
 ## What are the challenges for?
