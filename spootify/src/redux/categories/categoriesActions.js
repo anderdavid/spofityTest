@@ -2,13 +2,11 @@ import axios from 'axios';
 import { REQUEST_CATEGORIES } from '../../api/spotify';
 
 export const CATEGORIES = 'CATEGORIES';
-
-const access_token =
-  'BQBcZro_nT0wCBaLAxeYPIj-Fcas_t8cZtiPHWqNv_qY6psgphcJbz536IuN13mFBzjvIM644Sn9ZBEfrnY';
+const token = 'token';
 
 export const getcategories = () => {
-  console.log('getCategories');
   return (dispatch) => {
+    const access_token = window.localStorage.getItem(token);
     axios
       .get(REQUEST_CATEGORIES, {
         headers: {

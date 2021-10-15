@@ -2,11 +2,10 @@ import { REQUEST_GET_NEW_RELEASES } from '../../api/spotify';
 import axios from 'axios';
 
 export const GET_NEW_RELEASES = 'NEW_RELEASES';
-
-const access_token =
-  'BQBcZro_nT0wCBaLAxeYPIj-Fcas_t8cZtiPHWqNv_qY6psgphcJbz536IuN13mFBzjvIM644Sn9ZBEfrnY';
+const token = 'token';
 
 export const getNewReleases = () => {
+  const access_token = window.localStorage.getItem(token);
   return (dispatch) => {
     axios
       .get(REQUEST_GET_NEW_RELEASES, {
