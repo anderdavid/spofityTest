@@ -1,27 +1,52 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import DiscoverBlock from './DiscoverBlock/components/DiscoverBlock';
+import { useSelector, useDispatch } from 'react-redux';
 import '../styles/_discover.scss';
+import {
+  getcategories,
+  getFeaturePlaylist,
+  getNewReleases
+} from '../../../redux';
 
-export default class Discover extends Component {
-  constructor() {
-    super();
+export default function Discover() {
+  const newReleases = useSelector((state) => state.newReleases.newReleases);
+  const mCategories = useSelector((state) => state.categories.categories);
+  const featurePlaylist = useSelector(
+    (state) => state.featurePlaylist.featurePlaylist
+  );
+  const dispatch = useDispatch();
 
-    this.state = {
-      newReleases: [],
-      playlists: [],
-      categories: []
-    };
-  }
+  let { albums } = newReleases || {};
+  let { playlists } = featurePlaylist;
+  let { categories } = mCategories;
 
-  render() {
-    const { newReleases, playlists, categories } = this.state;
+  useEffect(() => {
+    dispatch(getcategories());
+    dispatch(getFeaturePlaylist());
+    dispatch(getNewReleases());
+  }, []);
 
-    return (
+  return (
+    <div>
       <div className="discover">
-        <DiscoverBlock text="RELEASED THIS WEEK" id="released" data={newReleases} />
-        <DiscoverBlock text="FEATURED PLAYLISTS" id="featured" data={playlists} />
-        <DiscoverBlock text="BROWSE" id="browse" data={categories} imagesKey="icons" />
+        <DiscoverBlock
+          text="RELEASED THIS WEEK"
+          id="released"
+          data={albums?.items || []}
+        />
+
+        <DiscoverBlock
+          text="FEATURED PLAYLISTS"
+          id="featured"
+          data={playlists?.items || []}
+        />
+        <DiscoverBlock
+          text="BROWSE"
+          id="browse"
+          data={categories?.items || []}
+          imagesKey="icons"
+        />
       </div>
-    );
-  }
+    </div>
+  );
 }

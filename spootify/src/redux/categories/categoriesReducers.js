@@ -12,7 +12,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         status: action.status,
-        categories: action.cursos,
+        categories: action.categories,
         msg: action.msg
       };
     default:

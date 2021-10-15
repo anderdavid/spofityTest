@@ -4,19 +4,22 @@ import { REQUEST_CATEGORIES } from '../../api/spotify';
 export const CATEGORIES = 'CATEGORIES';
 
 const access_token =
-  'BQCxAlbaTiqqS235sYPVvLuOuRC9GJbsAg0ZiQVan16Mcs7ZFd0tc-ZCyQUNCtVolnG_HnRIm1MvO2g79iY';
+  'BQBcZro_nT0wCBaLAxeYPIj-Fcas_t8cZtiPHWqNv_qY6psgphcJbz536IuN13mFBzjvIM644Sn9ZBEfrnY';
 
 export const getcategories = () => {
+  console.log('getCategories');
   return (dispatch) => {
     axios
       .get(REQUEST_CATEGORIES, {
-        Authorization: `token ${access_token}`
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
       })
       .then((response) => {
         dispatch({
           type: CATEGORIES,
           status: true,
-          categories: response.categories.items,
+          categories: response.data,
           msg: ''
         });
       })

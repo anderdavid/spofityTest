@@ -12,7 +12,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         status: action.status,
-        featurePlaylist: action.cursos,
+        featurePlaylist: action.featurePlaylist,
         msg: action.msg
       };
     default:

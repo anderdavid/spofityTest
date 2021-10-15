@@ -4,19 +4,21 @@ import axios from 'axios';
 export const GET_NEW_RELEASES = 'NEW_RELEASES';
 
 const access_token =
-  'BQCxAlbaTiqqS235sYPVvLuOuRC9GJbsAg0ZiQVan16Mcs7ZFd0tc-ZCyQUNCtVolnG_HnRIm1MvO2g79iY';
+  'BQBcZro_nT0wCBaLAxeYPIj-Fcas_t8cZtiPHWqNv_qY6psgphcJbz536IuN13mFBzjvIM644Sn9ZBEfrnY';
 
 export const getNewReleases = () => {
   return (dispatch) => {
     axios
       .get(REQUEST_GET_NEW_RELEASES, {
-        Authorization: `bearer ${access_token}`
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
       })
       .then((response) => {
         dispatch({
           type: GET_NEW_RELEASES,
           status: true,
-          newReleases: response.albums.items,
+          newReleases: response.data,
           msg: ''
         });
       })
