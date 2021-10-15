@@ -15,6 +15,8 @@ const reducer = (state = initialState, action) => {
         featurePlaylist: action.cursos,
         msg: action.msg
       };
+    default:
+      return state;
   }
 };
 

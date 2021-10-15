@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { REQUEST_GET_FEATURED_PLAYLIST } from '../../api/spotify';
+
 export const GET_FEATURED_PLAYLIST = 'FEATURED_PLAYLIST';
 
 const access_token =
@@ -6,7 +9,7 @@ const access_token =
 export const getFeaturePlaylist = () => {
   return (dispatch) => {
     axios
-      .get(api.GET_FEATURED_PLAYLIST, {
+      .get(REQUEST_GET_FEATURED_PLAYLIST, {
         Authorization: `token ${access_token}`
       })
       .then((response) => {

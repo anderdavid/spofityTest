@@ -1,4 +1,5 @@
-import api from '../../api/spotify';
+import { REQUEST_GET_NEW_RELEASES } from '../../api/spotify';
+import axios from 'axios';
 
 export const GET_NEW_RELEASES = 'NEW_RELEASES';
 
@@ -8,8 +9,8 @@ const access_token =
 export const getNewReleases = () => {
   return (dispatch) => {
     axios
-      .get(api.GET_NEW_RELEASES, {
-        Authorization: `token ${access_token}`
+      .get(REQUEST_GET_NEW_RELEASES, {
+        Authorization: `bearer ${access_token}`
       })
       .then((response) => {
         dispatch({
